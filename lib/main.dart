@@ -35,10 +35,34 @@ class MyApp extends StatelessWidget {
             // )
             Center(
               child: Builder(
-                builder: (context) => ElevatedButton(
+                builder: (context) => TextButton(
                   onPressed: () {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('스낵바가 표시되었습니다!')),
+                      SnackBar(
+                        content: const Text('스낵바가 표시되었습니다!'), // 스낵바 안에 표시할 텍스트
+
+                        duration: const Duration(seconds: 3), // 스낵바가 화면에 표시되는 시간
+
+                        backgroundColor: Colors.indigo, // 배경색 지정
+
+                        behavior: SnackBarBehavior.fixed, // fixed 또는 floating 설정 가능
+
+                        elevation: 6.0, // 그림자 깊이 (부유 느낌)
+
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0), // 모서리 둥글게
+                        ),
+
+                        action: SnackBarAction(
+                          label: '클릭', // 버튼 텍스트
+                          textColor: Colors.yellow, // 텍스트 색상
+
+                          onPressed: () {
+                            // 클릭 이벤트 처리: 예를 들어 로그 출력
+                            print('SnackBar의 클릭 액션 실행됨');
+                          },
+                        ),
+                      ),
                     );
                   },
                   child: const Text('스낵바 보기'),
