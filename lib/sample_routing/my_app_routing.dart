@@ -12,7 +12,7 @@ class MyAppRouting extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MyLoginScreen(),
+      home: const MyMainScreen(),
       routes: {
         '/main': (context) => const MyMainScreen(),
         '/signup': (context) => const MySignUpScreen(),
