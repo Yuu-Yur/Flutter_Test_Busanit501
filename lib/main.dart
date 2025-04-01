@@ -41,6 +41,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //오른쪽 상단의 디버그 화면을 제거
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         // 이 위치에 플로팅 액션 버튼을 위치 하기.
         floatingActionButton: FloatingActionButton(
@@ -185,7 +187,7 @@ Wrap(
               ],
             )
 
-,
+,SizedBox(height: 16),
             Wrap(
               alignment: WrapAlignment.center,
               children: [
@@ -203,7 +205,7 @@ Wrap(
                 ),
               ],
             )
-,
+,SizedBox(height: 16),
             Wrap(
               alignment: WrapAlignment.center,
               children: [
@@ -230,7 +232,63 @@ Wrap(
                 )
               ],
             )
-
+            ,SizedBox(height: 16),
+            Row(
+              // 주축 정렬 지정
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // 반대축 정렬 지정
+              crossAxisAlignment: CrossAxisAlignment.center,
+              // 넣고 싶은 위젯 입력
+              children: [
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  color: Colors.red,
+                ),
+                // SizedBox는 일반적으로 공백을 생성할 때 사용
+                SizedBox(width: 12.0),
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  color: Colors.green,
+                ),
+                SizedBox(width: 12.0),
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  color: Colors.blue,
+                ),
+              ],
+            )
+        ,SizedBox(height: 16),
+            Column(
+              // 주축 정렬 지정
+              mainAxisAlignment: MainAxisAlignment.start,
+              // 반대축 정렬 지정
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              // 넣고 싶은 위젯 입력
+              children: [
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  color: Colors.red,
+                ),
+                // SizedBox는 일반적으로 공백을 생성할 때 사용
+                SizedBox(height: 12.0), // 공백 추가 (Column이므로 height 사용)
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  color: Colors.green,
+                ),
+                SizedBox(height: 12.0), // 공백 추가
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  color: Colors.blue,
+                ),
+              ],
+            )
+        ,SizedBox(height: 30),
 
           ],
         ),
