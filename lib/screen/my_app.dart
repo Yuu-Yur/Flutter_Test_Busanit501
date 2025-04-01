@@ -13,11 +13,38 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             // my_app_up
-            Expanded(child: MyAppUp())
+            // Expanded(child: MyAppUp())
+            Flexible(
+              flex: 1,
+                child: MyAppUp())
 ,
             // my_app_down
-            Expanded(child: MyAppDown())
-
+            // Expanded(child: MyAppDown())
+            Flexible(
+                flex: 1,
+                // child: MyAppDown())
+                child: Stack(
+                  children: [
+                    // 빨간색 Container
+                    Container(
+                      height: 300.0,
+                      width: 300.0,
+                      color: Colors.red,
+                    ),
+                    // 노란색 Container
+                    Container(
+                      height: 250.0,
+                      width: 250.0,
+                      color: Colors.yellow,
+                    ),
+                    // 파란색 Container
+                    Container(
+                      height: 200.0,
+                      width: 200.0,
+                      color: Colors.blue,
+                    ),
+                  ],
+                ),)
           ],
         ),
       ),
