@@ -13,6 +13,7 @@ class MyAppRouting extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const MyMainScreen(),
+      //라우팅 준비물 1,
       routes: {
         '/main': (context) => const MyMainScreen(),
         '/signup': (context) => const MySignUpScreen(),

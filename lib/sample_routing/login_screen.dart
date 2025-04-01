@@ -27,6 +27,10 @@ class MyLoginScreen extends StatelessWidget {
                   onPressed: () => Navigator.pushNamed(context, '/details'),
                   child: const Text('로그인'),
                 ),
+                // ElevatedButton(
+                //   onPressed: () => Navigator.pushNamed(context, '/main'),
+                //   child: const Text('메인'),
+                // ),
               ],
             ),)),
     );
