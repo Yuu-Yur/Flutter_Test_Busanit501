@@ -17,6 +17,16 @@ class MyLoginScreen extends StatelessWidget {
               children: [
                 const Center(child: FlutterLogo(size: 100,)
                   )
+                ,
+                const SizedBox(height: 16),
+                const TextField(decoration: InputDecoration(labelText: '이메일')),
+                const SizedBox(height: 16),
+                const TextField(decoration: InputDecoration(labelText: '패스워드')),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () => Navigator.pushNamed(context, '/details'),
+                  child: const Text('로그인'),
+                ),
               ],
             ),)),
     );
