@@ -52,13 +52,15 @@ class MyApp extends StatelessWidget {
           tooltip: '추가', // 툴팁 텍스트 (길게 누를 때 표시)
           elevation: 6.0, // 그림자 깊이
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
-        body: Column(
+        // floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
+        body: ListView(
           children: [
             Builder(
               builder: (context) {
-                return Center(
-                  child: OutlinedButton(
+                return
+                  Wrap(
+                      alignment: WrapAlignment.center,
+                  children: [OutlinedButton(
                     // 클릭 시 실행할 함수
                     onPressed: () =>  _showSnackBar(context),
                     // 버튼 스타일 지정
@@ -67,63 +69,169 @@ class MyApp extends StatelessWidget {
                     ),
                     // 버튼에 넣을 위젯
                     child: Text('아웃라인드 버튼'),
-                  ),
+                  ),]
                 );
               }
             ),
             Builder(
               builder: (context) {
-                return ElevatedButton(
-                  // 클릭 시 실행할 함수
-                  onPressed: () =>  _showSnackBar(context),
-                  // 버튼 스타일 지정
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                  ),
-                  // 버튼에 넣을 위젯
-                  child: Text('엘리베이티드 버튼'),
-                );
+                return Wrap(
+                  alignment: WrapAlignment.center,
+                  children: [
+                    ElevatedButton(
+                    // 클릭 시 실행할 함수
+                    onPressed: () =>  _showSnackBar(context),
+                // 버튼 스타일 지정
+                style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                ),
+                // 버튼에 넣을 위젯
+                child: Text('엘리베이티드 버튼'),
+                )
+                  ],
+                ) ;
+
               }
             ),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
+            Wrap(
+              alignment: WrapAlignment.center,
+              children: [
+                IconButton(
+                    onPressed: () {},
+                    icon: Icon(
 // ① 플러터에서 기본으로 제공하는 아이콘입니다.
 // 제공되는 아이콘 목록은 다음 링크에서 확인해볼 수 있습니다.
 // https://fonts.google.com/icons
-                    Icons.home)),
-            GestureDetector(
-              // 한 번 탭했을 때 실행할 함수
-              // onTap: () {
-              //   // 출력 결과는 안드로이드 스튜디오의 [Run] 탭에서 확인 가능합니다.
-              //   print('on tap');
-              // },
-              // // 두 번 탭했을 때 실행할 함수
-              // onDoubleTap: () {
-              //   print('on double tap');
-              // },
-              // // 길게 눌렀을 때 실행할 함수
-              // onLongPress: () {
-              //   print('on long press');
-              // },
-              onPanStart : (details) {
-                print('on onPanStart start');
-              },
-              onPanUpdate: (details) {
-                print('onPanUpdate ');
-              },
-              onPanEnd : (details) {
-                print('onPanEnd ');
-              },
-              // 제스처를 적용할 위젯
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                ),
-                width: 100.0,
-                height: 100.0,
-              ),
+                        Icons.home)),
+              ],
             ),
+Wrap(
+  alignment: WrapAlignment.center,
+  children: [GestureDetector(
+    // 한 번 탭했을 때 실행할 함수
+    // onTap: () {
+    //   // 출력 결과는 안드로이드 스튜디오의 [Run] 탭에서 확인 가능합니다.
+    //   print('on tap');
+    // },
+    // // 두 번 탭했을 때 실행할 함수
+    // onDoubleTap: () {
+    //   print('on double tap');
+    // },
+    // // 길게 눌렀을 때 실행할 함수
+    // onLongPress: () {
+    //   print('on long press');
+    // },
+    onPanStart : (details) {
+      print('on onPanStart start');
+    },
+    onPanUpdate: (details) {
+      print('onPanUpdate ');
+    },
+    onPanEnd : (details) {
+      print('onPanEnd ');
+    },
+    // 제스처를 적용할 위젯
+    child: Container(
+      decoration: BoxDecoration(
+        color: Colors.red,
+      ),
+      width: 100.0,
+      height: 100.0,
+    ),
+  )],
+)
+            ,
+            Wrap(
+              alignment: WrapAlignment.center,
+              children: [
+                Container(
+                  // 스타일 적용
+                  decoration: BoxDecoration(
+                    // 배경색 적용
+                    color: Colors.red,
+                    // 테두리 적용
+                    border: Border.all(
+                      // 테두리 굵기
+                      width: 16.0,
+                      // 테두리 색상
+                      color: Colors.black,
+                    ),
+                    // 모서리 둥글게 만들기
+                    borderRadius: BorderRadius.circular(16.0),
+                  ),
+                  // 높이
+                  height: 200.0,
+                  // 너비
+                  width: 100.0,
+                )
+              ],
+            ),
+            SizedBox(height: 16),
+
+            Wrap(
+              alignment: WrapAlignment.center,
+              children: [
+                SizedBox(
+                  // 높이 지정
+                  height: 200.0,
+                  // 너비 지정
+                  width: 200.0,
+                  // SizedBox는 색상이 없으므로 크기를 확인하는
+                  // 용도로 Container 추가
+                  child: Container(
+                    color: Colors.red,
+                  ),
+                )
+              ],
+            )
+
+,
+            Wrap(
+              alignment: WrapAlignment.center,
+              children: [
+                Container(
+                  color: Colors.blue,
+                  child: Padding(
+                    // 상하, 좌우로 모두 16픽셀만큼 패딩 적용
+                    padding: EdgeInsets.all(16.0),
+                    child: Container(
+                      color: Colors.red,
+                      width: 50.0,
+                      height: 50.0,
+                    ),
+                  ),
+                ),
+              ],
+            )
+,
+            Wrap(
+              alignment: WrapAlignment.center,
+              children: [
+                Container(
+                  color: Colors.black, // ③ 최상위 검정 컨테이너 (margin이 적용되는 대상)
+                  child: Container(
+                    color: Colors.blue, // ② 중간 파란 컨테이너
+
+                    // 마진 적용 위치
+                    margin: EdgeInsets.all(16.0),
+
+                    // 패딩 적용
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+
+                      // ① 패딩이 적용된 빨간 컨테이너
+                      child: Container(
+                        color: Colors.red,
+                        width: 50.0,
+                        height: 50.0,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            )
+
+
           ],
         ),
       ),
