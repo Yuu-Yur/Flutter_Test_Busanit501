@@ -7,9 +7,12 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 class LoginController extends ChangeNotifier {
+  // 화면에서, 입력된 mid , mpw 입력 텍스트를 컨트롤러 연결하는 역할.
   final TextEditingController idController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  // 웹에서 세션과 비슷한 효과. 로그인 후,
+  // 로그인한 아이디, 응답 받은 액세스 토큰 등을 저장하는 저장소
   final FlutterSecureStorage secureStorage = const FlutterSecureStorage(); // 보안 저장소
   // final String serverIp = "http://192.168.219.103:8080"; // 서버 주소
   final String serverIp = "http://10.100.201.87:8080"; // 서버 주소 변경 필요
