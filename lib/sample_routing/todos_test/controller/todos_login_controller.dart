@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
+import '../screen/todos_main_screen.dart';
+
 class LoginController extends ChangeNotifier {
   // 화면에서, 입력된 mid , mpw 입력 텍스트를 컨트롤러 연결하는 역할.
   final TextEditingController idController = TextEditingController();
@@ -70,7 +72,7 @@ class LoginController extends ChangeNotifier {
         Future.delayed(const Duration(seconds: 1), () {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const MyMainScreen()),
+            MaterialPageRoute(builder: (context) => const TodosMainScreen()),
                 (Route<dynamic> route) => false, // 🔥 이전 모든 화면 제거
           );
         });
@@ -127,7 +129,7 @@ class LoginController extends ChangeNotifier {
     // ✅ 로그아웃 후 이전 모든 화면 제거 후 메인 화면 이동
     Navigator.pushAndRemoveUntil(
       context,
-      MaterialPageRoute(builder: (context) => const MyMainScreen()),
+      MaterialPageRoute(builder: (context) => const TodosMainScreen()),
           (Route<dynamic> route) => false, // 🔥 이전 모든 화면 제거
     );
 
