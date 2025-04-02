@@ -38,6 +38,8 @@ dependencies:
   provider: ^6.0.5
   http: ^0.13.6
   dio: ^5.8.0+1
+  flutter_secure_storage: ^9.2.4 # 플러터의 내부 저장소(안전한 버전)
+
 
 dev_dependencies:
   flutter_test:
