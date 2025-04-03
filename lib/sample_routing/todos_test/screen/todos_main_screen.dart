@@ -17,11 +17,20 @@ class _TodosMainScreenState extends State<TodosMainScreen> {
   final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
   String? userId;
 
+  // 최초에 화면을 그릴 때 동작함.
   @override
   void initState() {
     super.initState();
     _loadUserId();
   }
+
+  // 화면이 변경시 마다 호출.
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _loadUserId(); // 로그아웃 후 다시 화면 열릴 때 호출됨
+  }
+
 
   // 보안 저장소에서 로그인한 유저 ID 불러오기
   Future<void> _loadUserId() async {
@@ -68,6 +77,7 @@ class _TodosMainScreenState extends State<TodosMainScreen> {
               child: const Text('회원 가입'),
             ),
 
+            if (!loginController.isLoggedIn)
             OutlinedButton(
               onPressed: () => Navigator.pushNamed(context, '/login'),
               child: const Text('로그인'),
@@ -78,6 +88,11 @@ class _TodosMainScreenState extends State<TodosMainScreen> {
               onPressed: () => Navigator.pushNamed(context, '/pdtest1'),
               child: const Text('공공데이터 연동1'),
             ),
+            if (loginController.isLoggedIn)
+              OutlinedButton(
+                onPressed: () => Navigator.pushNamed(context, '/todos'),
+                child: const Text('todos 연동 리스트'),
+              ),
 
           ],
         ),

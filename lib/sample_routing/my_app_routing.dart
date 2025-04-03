@@ -4,6 +4,7 @@ import 'package:busanit501_flutter_test/sample_routing/my_splash_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/my_splash_screen2.dart';
 import 'package:busanit501_flutter_test/sample_routing/pd_test_screen/my_pd_test_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/signup_screen.dart';
+import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_list_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_login.dart';
 import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_main_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_signup_screen.dart';
@@ -25,6 +26,7 @@ class MyAppRouting extends StatelessWidget {
         '/signup': (context) => const TodosSignupScreen(),
         '/login': (context) => const LoginScreen(),
         '/pdtest1': (context) => const MyPdTestScreen(),
+        '/todos': (context) => const TodosScreen(),
       },
     );
   }
