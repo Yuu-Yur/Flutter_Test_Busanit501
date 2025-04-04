@@ -98,7 +98,21 @@ class _TodosMainScreenState extends State<TodosMainScreen> {
                 onPressed: () => Navigator.pushNamed(context, '/aiTest'),
                 child: const Text('ai 연동 테스트'),
               ),
-
+            if (loginController.isLoggedIn)
+              OutlinedButton(
+                onPressed: () => Navigator.pushNamed(context, '/design_sample1'),
+                child: const Text('디자인 샘플1 네비게이션 반응형'),
+              ),
+            if (loginController.isLoggedIn)
+              OutlinedButton(
+                onPressed: () => Navigator.pushNamed(context, '/design_sample2'),
+                child: const Text('디자인 샘플2 탭 화면'),
+              ),
+            if (loginController.isLoggedIn)
+              OutlinedButton(
+                onPressed: () => Navigator.pushNamed(context, '/design_sample3'),
+                child: const Text('디자인 샘플3 리스트 안에 리스트 뷰 화면 샘플'),
+              ),
           ],
         ),
       ),

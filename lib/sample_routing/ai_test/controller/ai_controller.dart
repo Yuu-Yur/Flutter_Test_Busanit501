@@ -9,7 +9,14 @@ import 'package:image_picker/image_picker.dart';
 
 
 class AiImageController extends ChangeNotifier {
+  // 웹 : 로컬 스토리지 역할 비슷,
+  // 플러터, 각 앱마다 내부 저장소 들이, 그중에서,
+  // 안전 보관소 : 인증 된 토큰, 인증된 유저 정보
+  // 모바일 특성, 1차 접근이 어렵다. 본인외에는 접근이 어렵다.
+  // 웹 과는 다르게, 보통 자동로그인을 자연스럽게 설정.
+
   final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
+
   File? selectedImage; // 선택한 이미지 파일
   bool isLoading = false; // 로딩 상태
   Map<String, dynamic>? predictionResult; // 예측 결과 저장
@@ -45,6 +52,8 @@ class AiImageController extends ChangeNotifier {
     if (pickedFile == null) return;
 
     if (isVideo) {
+      // 모바일의 이미지, 동영상의 위치의 url 표기
+      // http:// 웹형식, 모바일: content://
       selectedMedia = File(pickedFile.path);
       // selectedImage = null; // ✅ 동영상 선택 시 이미지 초기화
     } else {

@@ -4,6 +4,9 @@ import 'package:busanit501_flutter_test/sample_routing/main_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/my_splash_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/my_splash_screen2.dart';
 import 'package:busanit501_flutter_test/sample_routing/pd_test_screen/my_pd_test_screen.dart';
+import 'package:busanit501_flutter_test/sample_routing/sample_design/list_of_listView_sample.dart';
+import 'package:busanit501_flutter_test/sample_routing/sample_design/navigation_mode_sample1.dart';
+import 'package:busanit501_flutter_test/sample_routing/sample_design/tap_mode_sample2.dart';
 import 'package:busanit501_flutter_test/sample_routing/signup_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_add_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_edit_screen.dart';
@@ -33,6 +36,10 @@ class MyAppRouting extends StatelessWidget {
         '/todoCreate': (context) => const TodoCreateScreen(),
         '/todoDetail': (context) => TodoDetailScreen(tno: ModalRoute.of(context)!.settings.arguments as int),
         '/aiTest': (context) => AiImageScreen(),
+        '/design_sample1': (context) => ResponsiveNavBarPage(),
+        '/design_sample2': (context) => MaterialHomePage(),
+        '/design_sample3': (context) => Sample3ListOfListView(),
+
 
       },
     );

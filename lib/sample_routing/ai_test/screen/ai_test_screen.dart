@@ -55,18 +55,23 @@ class _AiImageScreenState extends State<AiImageScreen> {
 
   String updateUrl(String originalUrl) {
     if (originalUrl.contains("localhost:5000")) {
-      // return originalUrl.replaceFirst("localhost:5000", "10.100.201.87:5000");
+      // 실물 기기 일 때
+      return originalUrl.replaceFirst("localhost:5000", "10.100.201.87:5000");
       //에뮬레이터 일 때
-      return originalUrl.replaceFirst("localhost:5000", "10.0.2.2:5000");
+      // return originalUrl.replaceFirst("localhost:5000", "10.0.2.2:5000");
     }
     return originalUrl;
   }
 
 
+  // 플러터에서 화면을 그려 주는 부분
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    //  rms -> runApp -> MaterialApp -Scaffold
+    return Scaffold( // 화면의 뼈대 역할.
+      // 앱 상단의 화면,
       appBar: AppBar(title: Text("AI 이미지 분류기")),
+      // 프로바이더 인 컨트로럴와 연결하는 역할.
       body: Consumer<AiImageController>(
         builder: (context, controller, child) {
           return Padding(
