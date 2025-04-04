@@ -40,6 +40,7 @@ dependencies:
   dio: ^5.8.0+1
   flutter_secure_storage: ^9.2.4 # 플러터의 내부 저장소(안전한 버전)
   image_picker: ^1.0.4
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:

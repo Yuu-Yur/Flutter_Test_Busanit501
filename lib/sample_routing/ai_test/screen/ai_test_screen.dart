@@ -1,6 +1,14 @@
 
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../controller/ai_controller.dart';
+import 'ai_preview_screen.dart';
+
 
 class AiImageScreen extends StatefulWidget {
   @override
