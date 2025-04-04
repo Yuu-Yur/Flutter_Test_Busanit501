@@ -93,6 +93,11 @@ class _TodosMainScreenState extends State<TodosMainScreen> {
                 onPressed: () => Navigator.pushNamed(context, '/todos'),
                 child: const Text('todos 연동 리스트'),
               ),
+            if (loginController.isLoggedIn)
+              OutlinedButton(
+                onPressed: () => Navigator.pushNamed(context, '/todos'),
+                child: const Text('ai 연동 테스트'),
+              ),
 
           ],
         ),

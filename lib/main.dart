@@ -1,3 +1,4 @@
+import 'package:busanit501_flutter_test/sample_routing/ai_test/controller/ai_controller.dart';
 import 'package:busanit501_flutter_test/sample_routing/login_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/my_app_routing.dart';
 import 'package:busanit501_flutter_test/sample_routing/my_splash_screen.dart';
@@ -19,7 +20,8 @@ void main() {
           ChangeNotifierProvider(create: (context) => FoodController()),
           ChangeNotifierProvider(create: (context) => LoginController()),
           ChangeNotifierProvider(create: (context) => SignupController()),
-          ChangeNotifierProvider(create: (context) => TodoController())
+          ChangeNotifierProvider(create: (context) => TodoController()),
+          ChangeNotifierProvider(create: (context) => AiImageController())
         ],
     child: const MyAppRouting(),)
   );

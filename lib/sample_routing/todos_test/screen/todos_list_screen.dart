@@ -202,8 +202,8 @@ class _TodosScreenState extends State<TodosScreen> {
                         // ✅ 삭제 버튼 (삭제 확인 다이얼로그 호출)
                         IconButton(
                           icon: const Icon(Icons.delete, color: Colors.red),
-                          // onPressed: () => todoController.confirmDelete(context, todo.tno),
-                          onPressed: () => {},
+                          onPressed: () => todoController.confirmDelete(context, todo.tno),
+
                         ),
                       ],
                     ),

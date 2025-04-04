@@ -1,9 +1,12 @@
+import 'package:busanit501_flutter_test/sample_routing/ai_test/screen/ai_test_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/login_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/main_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/my_splash_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/my_splash_screen2.dart';
 import 'package:busanit501_flutter_test/sample_routing/pd_test_screen/my_pd_test_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/signup_screen.dart';
+import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_add_screen.dart';
+import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_edit_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_list_screen.dart';
 import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_login.dart';
 import 'package:busanit501_flutter_test/sample_routing/todos_test/screen/todos_main_screen.dart';
@@ -27,6 +30,10 @@ class MyAppRouting extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/pdtest1': (context) => const MyPdTestScreen(),
         '/todos': (context) => const TodosScreen(),
+        '/todoCreate': (context) => const TodoCreateScreen(),
+        '/todoDetail': (context) => TodoDetailScreen(tno: ModalRoute.of(context)!.settings.arguments as int),
+        '/aiTest': (context) => AiImageScreen(),
+
       },
     );
   }
